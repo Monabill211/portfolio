@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.9ad9f3e1.css",
+    "main.js": "/portfolio/static/js/main.27558116.js",
+    "static/js/453.96453769.chunk.js": "/portfolio/static/js/453.96453769.chunk.js",
+    "static/media/screencapture-monabill211-github-io-menuu-2025-11-23-15_45_56.png": "/portfolio/static/media/screencapture-monabill211-github-io-menuu-2025-11-23-15_45_56.f2d8d766921b0a139a7d.png",
+    "static/media/screencapture-file-D-tempalet-js-indexd-html-2025-07-17-23_36_29.png": "/portfolio/static/media/screencapture-file-D-tempalet-js-indexd-html-2025-07-17-23_36_29.08e4d755ea679f16fca9.png",
+    "static/media/screencapture-file-D-pikio-index-html-2025-07-17-23_36_53.png": "/portfolio/static/media/screencapture-file-D-pikio-index-html-2025-07-17-23_36_53.4266381e4880b1459950.png",
+    "static/media/screencapture-file-D-index-html-2025-07-17-23_35_02.png": "/portfolio/static/media/screencapture-file-D-index-html-2025-07-17-23_35_02.98ee69dbb90aadcc274e.png",
+    "static/media/5472309857.png": "/portfolio/static/media/5472309857.859505a0387693283321.png",
+    "index.html": "/portfolio/index.html",
+    "main.9ad9f3e1.css.map": "/portfolio/static/css/main.9ad9f3e1.css.map",
+    "main.27558116.js.map": "/portfolio/static/js/main.27558116.js.map",
+    "453.96453769.chunk.js.map": "/portfolio/static/js/453.96453769.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ad9f3e1.css",
+    "static/js/main.27558116.js"
+  ]
+}
