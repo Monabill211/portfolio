@@ -4,6 +4,9 @@ import img3 from "./img/screencapture-file-D-tempalet-js-indexd-html-2025-07-17-
 import img4 from "./img/screencapture-monabill211-github-io-menuu-2025-11-23-15_45_56.png"
 import Button from "./allprojects";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import {  useEffect } from "react";
 
 import Card from "./projectdetiles";
 import { Margin } from "@mui/icons-material";
@@ -20,6 +23,13 @@ export default function Project() {
     width: "300px",
     cursor: "pointer",
   };
+  useEffect(() => {
+        AOS.init({
+          duration: 800,
+          once: true,
+        });
+      }, []);
+    
   return (
     <div>
       <div
@@ -32,6 +42,9 @@ export default function Project() {
         id
       >
         <div>
+          <div data-aos="fade-up" >
+
+       
           <Card
             title="موقع تعريفي"
             detiles="موقع تعريفي للشركة توريد ادوات فنديقة فيه صور و وصف للمنتجات و التواصل من خلال الموقع"
@@ -47,6 +60,11 @@ export default function Project() {
 
         </div>
         <div style={{ marginTop: "30px" }}>
+             </div>
+               <div data-aos="fade-down" >
+
+
+              
           <Card
             title="موقع تجارة الكترونية"
             detiles="موقع تجارة الاثاث المكتبي فيه كل امكانيات و صفحات المتجر الاكتروني و كمان عند طلب المنتج يرسل رسالة علي الوتساب"
@@ -60,7 +78,12 @@ export default function Project() {
   <h5 style={style}>See Project</h5>
 </a>
         </div>
-        <div style={{ marginTop: "30px" }}>
+        <div style={{ marginTop: "30px" }}> 
+
+        </div>
+          <div data-aos="fade-up" >
+
+          
           <Card title="منيو مطعم" detiles="منيو مطعم للطلب الوارادت من خلال الرسائل " img={img4} />
         <a
   href="https://monabill211.github.io/menuu/#/"
@@ -70,7 +93,7 @@ export default function Project() {
   <h5 style={style}>See Project</h5>
 </a>
 
-        </div>
+        </div></div>
       </div>
         <Link to="/Projectcard">      <Button
         style={{
