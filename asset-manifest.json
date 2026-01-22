@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.d700f678.css",
+    "main.js": "/portfolio/static/js/main.1f4abb0d.js",
+    "static/js/453.b9256582.chunk.js": "/portfolio/static/js/453.b9256582.chunk.js",
+    "static/media/screencapture-monabill211-github-io-menuu-2025-11-23-15_45_56.png": "/portfolio/static/media/screencapture-monabill211-github-io-menuu-2025-11-23-15_45_56.bc8cccc11d712a1c9eb1.png",
+    "static/media/screencapture-file-D-tempalet-js-indexd-html-2025-07-17-23_36_29.png": "/portfolio/static/media/screencapture-file-D-tempalet-js-indexd-html-2025-07-17-23_36_29.deb6318336bdcfe1d193.png",
+    "static/media/screencapture-piockio-vercel-app-2026-01-22-02_35_44.png": "/portfolio/static/media/screencapture-piockio-vercel-app-2026-01-22-02_35_44.ead3d8a0c2b24c726fe7.png",
+    "static/media/screencapture-monabill211-github-io-time-2026-01-22-02_36_01.png": "/portfolio/static/media/screencapture-monabill211-github-io-time-2026-01-22-02_36_01.1a9de9b06571f5eb1da1.png",
+    "static/media/screencapture-monabill211-github-io-2026-01-22-14_44_13.png": "/portfolio/static/media/screencapture-monabill211-github-io-2026-01-22-14_44_13.96e265d7208cb61c202a.png",
+    "static/media/screencapture-monabill211-github-io-Tempalet-2-2026-01-22-02_36_30.png": "/portfolio/static/media/screencapture-monabill211-github-io-Tempalet-2-2026-01-22-02_36_30.c41e47ed5f38cedd7219.png",
+    "static/media/screencapture-localhost-3000-2026-01-22-14_30_35.png": "/portfolio/static/media/screencapture-localhost-3000-2026-01-22-14_30_35.7e09c26446ad6617d582.png",
+    "static/media/screencapture-file-D-index-html-2025-07-17-23_35_02.png": "/portfolio/static/media/screencapture-file-D-index-html-2025-07-17-23_35_02.efa637bd9e53160af0f4.png",
+    "static/media/5472309857.png": "/portfolio/static/media/5472309857.859505a0387693283321.png",
+    "index.html": "/portfolio/index.html",
+    "main.d700f678.css.map": "/portfolio/static/css/main.d700f678.css.map",
+    "main.1f4abb0d.js.map": "/portfolio/static/js/main.1f4abb0d.js.map",
+    "453.b9256582.chunk.js.map": "/portfolio/static/js/453.b9256582.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d700f678.css",
+    "static/js/main.1f4abb0d.js"
+  ]
+}
