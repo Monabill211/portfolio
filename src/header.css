@@ -1,0 +1,89 @@
+.logo {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+.btn {
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #fcfcfc;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #3aa39a;
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  color: #66667c;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #3aa39a;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+@media (max-width: 991px) {
+  .none {
+    display: none !important ;
+  }
+}
+@media (max-width: 991px) {
+  .logo {
+    font-size: 20px;
+  }
+}
+.show {
+  background: white;
+  width: fit-content;
+  padding: 20px;
+  list-style: none;
+  right: 9px;
+  position: absolute;
+  font-weight: bold;
+  color: black;
+  z-index: 100;
+  border-radius: 16px;
+  top: 67px;
+}
+
+.show li {
+  color: black;
+}
+@media (min-width: 991px) {
+  .toggol {
+    display: none;
+  }
+}
+.toggol {
+}
