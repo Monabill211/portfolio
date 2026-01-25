@@ -62,7 +62,7 @@ export default function Projectcard() {
       title: "مركز مساج نسائي سعودي caru",
       img: img8,
       desc: "مركز مساج سعودي يقدم خدمة المساج في المنزل حيث يايتك في المكان الذي تريده",
-      link: "https://monabill211.github.io/caru/",
+      link: "https://monabill211.github.io/cura/",
     },
   ];
 
