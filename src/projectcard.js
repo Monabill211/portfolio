@@ -62,7 +62,13 @@ export default function Projectcard() {
       title: "مركز مساج نسائي سعودي caru",
       img: img8,
       desc: "مركز مساج سعودي يقدم خدمة المساج في المنزل حيث يايتك في المكان الذي تريده",
-      link: "https://monabill211.github.io/-/",
+      link: "https://monabill211.github.io/cura/",
+    },
+    {
+      title: "Bella Vita متجر مستحضرات تجميل",
+     
+      desc: "متجر مستحضرات تجيمل",
+      link: "https://bella-veta.vercel.app/",
     },
   ];
 

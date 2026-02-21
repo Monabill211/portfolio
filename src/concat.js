@@ -19,7 +19,7 @@ export default function Concat({ sectionRef }) {
   };
 
   const sendToWhatsApp = () => {
-    const phone = "201110094460"; // لازم يبدأ بـ 20
+    const phone = "201110094460";
     const text = `Name: ${name}%0AMessage: ${msg}`;
     const url = `https://wa.me/201110094460?text=${text}`;
     window.open(url, "_blank");
@@ -95,23 +95,23 @@ export default function Concat({ sectionRef }) {
 
       </div>
 
-      <div>
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
         <Input
-        style={{margin:"20px"}}
+        // style={{margin:"20px"}}
           name="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
 
         <Input
-          style={{ marginTop: "50px"  }}
+          // style={{ marginTop: "50px"  }}
           name="Message"
           value={msg}
           onChange={(e) => setMsg(e.target.value)}
         />
 
         <Button
-          style={{ marginTop: "50px" }}
+          // style={{ marginTop: "50px" }}
           title="Send"
           onClick={sendToWhatsApp}
         />
