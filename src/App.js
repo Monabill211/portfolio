@@ -6,15 +6,17 @@ import Project from "./project";
 import Conact from "./concat";
 import Footer from "./footer";
 import Projectcard from "./projectcard";
-
 import { Routes, Route } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Home from "./home3d";
+import { useUi } from "./ui/UiProvider";
 
 function App() {
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
+  const { t } = useUi();
 
   const scrollToAbout = () => {
     aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -42,13 +44,13 @@ function App() {
           element={
             <>
               <div data-aos="fade-down">
-                <Landing />
+                <Home />
               </div>
 
               <div style={{ paddingTop: "100px" }}>
-                <h1 style={{ color: "white" }}>waht I do</h1>
-                <h5 style={{ color: "#3aa39a", paddingTop: "7px" }}>
-                  My services
+                <h1 style={{ color: "var(--text)" }}>{t("sections.whatIDo")}</h1>
+                <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
+                  {t("sections.services")}
                 </h5>
 
                 <div data-aos="fade-up">
@@ -57,9 +59,9 @@ function App() {
               </div>
 
               <div style={{ paddingTop: "100px" }}>
-                <h1 style={{ color: "white" }}>projects</h1>
-                <h5 style={{ color: "#3aa39a", paddingTop: "7px" }}>
-                  My projects
+                <h1 style={{ color: "var(--text)" }}>{t("sections.projects")}</h1>
+                <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
+                  {t("sections.myProjects")}
                 </h5>
 
                 <div data-aos="fade-down">
@@ -68,9 +70,9 @@ function App() {
               </div>
 
               <div style={{ paddingTop: "100px" }}>
-                <h1 style={{ color: "white" }}>Contact</h1>
-                <h5 style={{ color: "#3aa39a", paddingTop: "7px" }}>
-                  Contact Me
+                <h1 style={{ color: "var(--text)" }}>{t("sections.contact")}</h1>
+                <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
+                  {t("sections.contactMe")}
                 </h5>
 
                 <div data-aos="zoom-in">

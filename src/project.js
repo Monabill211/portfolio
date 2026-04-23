@@ -10,9 +10,11 @@ import {  useEffect } from "react";
 
 import Card from "./projectdetiles";
 import { Margin } from "@mui/icons-material";
+import { useUi } from "./ui/UiProvider";
 export default function Project() {
+  const { t } = useUi();
   const style = {
-    color: "white",
+    color: "var(--text)",
     padding: "10px",
     marginTop: "10px",
     background: "#3aa39a",
@@ -55,7 +57,7 @@ export default function Project() {
   target="_blank"
   style={{ textDecoration: "none" }}
 >
-  <h5 style={style}>See Project</h5>
+  <h5 style={style}>{t("common.seeProject")}</h5>
 </a>
 
         </div>
@@ -75,7 +77,7 @@ export default function Project() {
   target="_blank"
   style={{ textDecoration: "none" }}
 >
-  <h5 style={style}>See Project</h5>
+  <h5 style={style}>{t("common.seeProject")}</h5>
 </a>
         </div>
         <div style={{ marginTop: "30px" }}> 
@@ -90,12 +92,12 @@ export default function Project() {
   target="_blank"
   style={{ textDecoration: "none" }}
 >
-  <h5 style={style}>See Project</h5>
+  <h5 style={style}>{t("common.seeProject")}</h5>
 </a>
 
         </div></div>
       </div>
-        <Link to="/Projectcard">      <Button
+        <Link to="/projectcard">      <Button
         style={{
           margin: "40px",
           color: "#3aa39a",

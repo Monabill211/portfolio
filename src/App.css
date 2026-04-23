@@ -1,9 +1,6 @@
 .App {
   text-align: center;
 }
-body {
-  background-color: black;
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +8,7 @@ body {
 
 a{
   text-decoration: none;
+  color: inherit;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -2,8 +2,10 @@ import Card from "./aboutDetils";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {  useEffect } from "react";
+import { useUi } from "./ui/UiProvider";
 
 export default function About({ sectionRef }) {
+  const { t } = useUi();
    useEffect(() => {
       AOS.init({
         duration: 800,
@@ -16,7 +18,7 @@ export default function About({ sectionRef }) {
     <div
       style={{
         display: "flex",
-        color: "white",
+        color: "var(--text)",
         justifyContent: "space-around",
         flexWrap: "wrap",
         alignItems: "center",
@@ -30,22 +32,14 @@ export default function About({ sectionRef }) {
 
      
       <Card
-        title="Front-End Developer
-"
-        detiles="I build interactive and responsive user interfaces using HTML, CSS, JavaScript, and React.
-I focus on clean code and user-friendly design.
-
-"
+        title={`${t("aboutCards.feTitle")}\n`}
+        detiles={`${t("aboutCards.feDetails")}\n`}
     />
      </div>
            <div data-aos="fade-right" >
       <Card
-        title="Back-End Developer
-"
-        detiles="I create back-end solutions with Node.js and Express,
-focusing on clean architecture and efficient, user-ready APIs
-
-"
+        title={`${t("aboutCards.beTitle")}\n`}
+        detiles={`${t("aboutCards.beDetails")}\n`}
     />
      </div>
            <div data-aos="fade-right" >
@@ -53,32 +47,22 @@ focusing on clean architecture and efficient, user-ready APIs
           
 
       <Card
-        title=" WordPress Developer
-"
-        detiles="I create dynamic, easy-to-manage websites with WordPress.
-I customize themes and plugins to match each client's unique needs.
-"
+        title={`${t("aboutCards.wpTitle")}\n`}
+        detiles={`${t("aboutCards.wpDetails")}\n`}
     /> </div>
          <div data-aos="fade-left" >
 
           <Card
-        title=" UI/UX Designer
-"
-        detiles="I design attractive and intuitive user experiences using tools like Figma.
-My goal is to deliver smooth and visually appealing interfaces.
-"
+        title={`${t("aboutCards.uiuxTitle")}\n`}
+        detiles={`${t("aboutCards.uiuxDetails")}\n`}
       />
          </div>
 
       
              <div data-aos="fade-right" >
                  <Card
-        title=" My Experience
-"
-        detiles="I have 2 years of hands-on experience in front-end development.
-During this time, I have completed over 20 successful projects for various clients.
-
-"
+        title={`${t("aboutCards.expTitle")}\n`}
+        detiles={`${t("aboutCards.expDetails")}\n`}
      data-aos="fade-left"  />
              </div>
 

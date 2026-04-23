@@ -8,8 +8,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Input from "./input";
 import Button from "./contcatMe";
+import { useUi } from "./ui/UiProvider";
 
 export default function Concat({ sectionRef }) {
+  const { t } = useUi();
   const [name, setName] = useState("");
   const [msg, setMsg] = useState("");
 
@@ -38,7 +40,7 @@ export default function Concat({ sectionRef }) {
         style={{
           display: "flex",
           flexDirection: "column",
-          color: "white",
+          color: "var(--text)",
         }}
       >
        <h2>
@@ -98,21 +100,21 @@ export default function Concat({ sectionRef }) {
       <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
         <Input
         // style={{margin:"20px"}}
-          name="Name"
+          name={t("contact.name")}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
 
         <Input
           // style={{ marginTop: "50px"  }}
-          name="Message"
+          name={t("contact.message")}
           value={msg}
           onChange={(e) => setMsg(e.target.value)}
         />
 
         <Button
           // style={{ marginTop: "50px" }}
-          title="Send"
+          title={t("contact.send")}
           onClick={sendToWhatsApp}
         />
       </div>

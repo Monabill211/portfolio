@@ -1,5 +1,5 @@
 .logo {
-  color: white;
+  color: var(--text);
   font-size: 32px;
   font-weight: bold;
 }
@@ -8,7 +8,7 @@
   background: transparent;
   border: none;
   padding: 1em 1.5em;
-  color: #fcfcfc;
+  color: var(--text);
   text-transform: uppercase;
   position: relative;
   transition: 0.5s ease;
@@ -23,12 +23,12 @@
   bottom: 0;
   height: 2px;
   width: 0;
-  background-color: #3aa39a;
+  background-color: var(--accent);
   transition: 0.5s ease;
 }
 
 .btn:hover {
-  color: #66667c;
+  color: var(--muted);
   transition-delay: 0.5s;
 }
 
@@ -43,7 +43,7 @@
   bottom: 0;
   height: 0;
   width: 100%;
-  background-color: #3aa39a;
+  background-color: var(--accent);
   transition: 0.4s ease;
   z-index: -1;
 }
@@ -64,21 +64,22 @@
   }
 }
 .show {
-  background: white;
+  background: var(--surface);
   width: fit-content;
   padding: 20px;
   list-style: none;
   right: 9px;
   position: absolute;
   font-weight: bold;
-  color: black;
+  color: var(--text);
   z-index: 100;
   border-radius: 16px;
   top: 67px;
+  border: 1px solid var(--border);
 }
 
 .show li {
-  color: black;
+  color: var(--text);
 }
 @media (min-width: 991px) {
   .toggol {
