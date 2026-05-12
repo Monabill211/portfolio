@@ -17,9 +17,14 @@ const Card = ({ title, detiles, img }) => {
 };
 
 const StyledWrapper = styled.div`
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+
   .card {
     position: relative;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 200px;
     background-color: #f2f2f2;
     border-radius: 10px;

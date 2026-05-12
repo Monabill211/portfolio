@@ -1,8 +1,16 @@
 .text {
   color: white;
   width: 501px;
-
+  max-width: 100%;
   text-align: left;
+}
+
+.landing-greeting {
+  margin: 0;
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
 }
 img::after {
   content: "";

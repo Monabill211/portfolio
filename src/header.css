@@ -1,10 +1,16 @@
 .logo {
   color: var(--text);
-  font-size: 32px;
+  font-size: clamp(1.1rem, 4vw, 32px);
   font-weight: bold;
 }
+
+.header-bar {
+  position: relative;
+  padding-left: clamp(12px, 3vw, 30px);
+  padding-right: clamp(12px, 3vw, 30px);
+}
 .btn {
-  font-size: 18px;
+  font-size: clamp(0.75rem, 2.5vw, 18px);
   background: transparent;
   border: none;
   padding: 1em 1.5em;
@@ -60,7 +66,7 @@
 }
 @media (max-width: 991px) {
   .logo {
-    font-size: 20px;
+    font-size: clamp(1rem, 4.5vw, 1.35rem);
   }
 }
 .show {

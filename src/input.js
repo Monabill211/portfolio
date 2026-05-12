@@ -33,7 +33,8 @@ const StyledWrapper = styled.div`
    font-size: 16px;
    padding: 10px 10px 10px 5px;
    display: block;
-   width: 200px;
+   width: 100%;
+   max-width: 320px;
    border: none;
    border-bottom: 1px solid #515151;
    background: transparent;
@@ -65,7 +66,8 @@ const StyledWrapper = styled.div`
   .bar {
    position: relative;
    display: block;
-   width: 200px;
+   width: 100%;
+   max-width: 320px;
   }
 
   .bar:before, .bar:after {

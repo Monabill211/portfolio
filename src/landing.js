@@ -1,4 +1,3 @@
-import myImage from "./img/5472309857.png";
 import "./landing.css";
 import ImageWithCircle from "./img";
 import Button from "./contcatMe";
@@ -10,15 +9,16 @@ export default function Landing() {
         display: "flex",
         justifyContent: "space-around",
         paddingTop: "20px",
+        gap: "24px",
+        flexWrap: "wrap",
       }}
       className="conteiner"
     >
       <div
-        className="text
-      "
-      style={{display:"flex",flexDirection:"column",alignItems:"center"}}
+        className="text"
+        style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
       >
-        <h6 className="bg-red-500 text-4xl">Hallo,I AM</h6>
+        <h6 className="landing-greeting">Hello, I am</h6>
         <h1>Mohamed Nabil</h1>
         <h4 style={{ color: "#3aa39a" }}>I AM Front End Developer</h4>
         

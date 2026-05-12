@@ -1,6 +1,5 @@
 "use client";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import img1 from "./img/screencapture-monabill211-github-io-menuu-2025-11-23-15_45_56.png";
@@ -31,7 +30,7 @@ export default function Projectcard() {
       title: "E-Commerce",
       img: img5,
       desc: "Full e-commerce shop with cart, favorites, and filtering.",
-      link: "https://piockio.vercel.app/",
+      link: "https://pickio-test.vercel.app/",
     },
     {
       title: "مواقيت الصلاة",
@@ -66,10 +65,28 @@ export default function Projectcard() {
     },
     {
       title: "Bella Vita متجر مستحضرات تجميل",
-     
       desc: "متجر مستحضرات تجيمل",
       link: "https://bella-veta.vercel.app/",
     },
+    
+    {
+      title: "المطري للعقارات ",
+      desc: "موقع للشركة عقارات تعرض فيه جميع مشارعها و الوحدات المعروضه للبيع",
+      link: "https://almotairy.org/",
+    },
+    
+    {
+      title: "Dusour شركة برمجة وتطوير",
+      desc: "شركة برمجية تعرض الحلول البرمجية والتطوير المبتكرة",
+      link: "https://dusour.com/",
+    },
+    
+    {
+      title: "معمار الغد شركة مقاولات",
+      desc: "صفحة هبوط بسيطة للموقع مقاولات ",
+      link: "https://www.mimaralghad.com/",
+    },
+    
   ];
 
   const animations = [
@@ -96,10 +113,14 @@ export default function Projectcard() {
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              <img src={item.img} alt={item.title} />
+              {item.img ? (
+                <img src={item.img} alt={item.title} />
+              ) : null}
               <h2>{item.title}</h2>
               <p>{item.desc}</p>
-              <a href={item.link} target="_blank">View Project</a>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                View Project
+              </a>
      
             </motion.div>
           );
@@ -110,14 +131,17 @@ export default function Projectcard() {
 }
 
 const Wrapper = styled.div`
-  padding: 60px 20px;
+  padding: clamp(32px, 6vw, 60px) clamp(16px, 4vw, 20px);
   background: #0f0f0f;
   min-height: 100vh;
   color: white;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
 
   .title {
     text-align: center;
-    font-size: 40px;
+    font-size: clamp(1.5rem, 5vw, 40px);
     margin-bottom: 40px;
   }
 
@@ -127,7 +151,7 @@ const Wrapper = styled.div`
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 25px;
   }
 

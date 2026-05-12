@@ -1,16 +1,28 @@
 import myImage from "./img/5472309857.png";
+
 function ImageWithCircle() {
+  const size = "min(200px, 70vw)";
   return (
-    <div style={{ position: "relative", width: 200, height: 200 }}>
+    <div
+      style={{
+        position: "relative",
+        width: size,
+        height: size,
+        maxWidth: 220,
+        maxHeight: 220,
+        margin: "0 auto",
+      }}
+    >
       <div
         style={{
           position: "absolute",
-          width: 250,
-          height: 250,
+          inset: "12% 8% auto 8%",
+          aspectRatio: "1",
+          width: "auto",
+          height: "78%",
+          maxHeight: "100%",
           borderRadius: "50%",
           backgroundColor: "#3aa39a",
-          top: 10,
-          left: -12,
           zIndex: 1,
         }}
       />
@@ -19,13 +31,13 @@ function ImageWithCircle() {
         alt="Profile"
         style={{
           position: "absolute",
-
-          borderRadius: "50%",
+          inset: "0",
+          width: "100%",
+          height: "100%",
           objectFit: "cover",
-          top: -64,
+          borderRadius: "50%",
           zIndex: 2,
-            // left: -100,
-          right:-132
+          border: "3px solid rgba(255,255,255,0.15)",
         }}
       />
     </div>

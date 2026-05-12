@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import { useState } from "react";
-import Lineskills from "./lineskills";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -21,7 +19,6 @@ export default function Concat({ sectionRef }) {
   };
 
   const sendToWhatsApp = () => {
-    const phone = "201110094460";
     const text = `Name: ${name}%0AMessage: ${msg}`;
     const url = `https://wa.me/201110094460?text=${text}`;
     window.open(url, "_blank");
@@ -29,20 +26,10 @@ export default function Concat({ sectionRef }) {
 
   return (
     <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        marginTop: "30px",
-      }}
+      className="contact-layout"
       ref={sectionRef}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          color: "var(--text)",
-        }}
-      >
+      <div className="contact-icons" style={{ color: "var(--text)" }}>
        <h2>
          <a 
     href="https://www.linkedin.com/in/mohamed-nabil-99a498282/" 
@@ -60,8 +47,9 @@ export default function Concat({ sectionRef }) {
     target="_blank" 
     rel="noopener noreferrer"
     style={{ color: "inherit" }}
-  ></a>
+  >
   <FacebookIcon style={style} />
+  </a>
 </h2>
 
 <h2>
@@ -81,8 +69,9 @@ export default function Concat({ sectionRef }) {
     target="_blank" 
     rel="noopener noreferrer"
     style={{ color: "inherit" }}
-  ></a>
+  >
   <InstagramIcon style={style} />
+  </a>
 </h2>
 
 <h2>
@@ -97,7 +86,7 @@ export default function Concat({ sectionRef }) {
 
       </div>
 
-      <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+      <div className="contact-form-col">
         <Input
         // style={{margin:"20px"}}
           name={t("contact.name")}

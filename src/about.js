@@ -14,20 +14,7 @@ export default function About({ sectionRef }) {
     }, []);
   
   return (
-
-    <div
-      style={{
-        display: "flex",
-        color: "var(--text)",
-        justifyContent: "space-around",
-        flexWrap: "wrap",
-        alignItems: "center",
-        gap: "10px",
-        paddingTop: "50px",
-
-      }}
-     ref={sectionRef} 
-    >
+    <div className="about-grid" ref={sectionRef}>
       <div data-aos="fade-left" >
 
      
@@ -59,12 +46,12 @@ export default function About({ sectionRef }) {
          </div>
 
       
-             <div data-aos="fade-right" >
-                 <Card
-        title={`${t("aboutCards.expTitle")}\n`}
-        detiles={`${t("aboutCards.expDetails")}\n`}
-     data-aos="fade-left"  />
-             </div>
+      <div data-aos="fade-right">
+        <Card
+          title={`${t("aboutCards.expTitle")}\n`}
+          detiles={`${t("aboutCards.expDetails")}\n`}
+        />
+      </div>
 
    
     </div>

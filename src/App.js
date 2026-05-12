@@ -1,6 +1,5 @@
 import "./App.css";
 import Header from "./header";
-import Landing from "./landing";
 import About from "./about";
 import Project from "./project";
 import Conact from "./concat";
@@ -43,37 +42,43 @@ function App() {
           path="/"
           element={
             <>
-              <div data-aos="fade-down">
+              <div data-aos="fade-down" className="hero-3d-wrap">
                 <Home />
               </div>
 
-              <div style={{ paddingTop: "100px" }}>
-                <h1 style={{ color: "var(--text)" }}>{t("sections.whatIDo")}</h1>
-                <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
-                  {t("sections.services")}
-                </h5>
+              <div className="page-wrap" style={{ paddingTop: "clamp(48px, 12vw, 100px)" }}>
+                <div className="section-headings">
+                  <h1 style={{ color: "var(--text)" }}>{t("sections.whatIDo")}</h1>
+                  <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
+                    {t("sections.services")}
+                  </h5>
+                </div>
 
                 <div data-aos="fade-up">
                   <About sectionRef={aboutRef} />
                 </div>
               </div>
 
-              <div style={{ paddingTop: "100px" }}>
-                <h1 style={{ color: "var(--text)" }}>{t("sections.projects")}</h1>
-                <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
-                  {t("sections.myProjects")}
-                </h5>
+              <div className="page-wrap" style={{ paddingTop: "clamp(48px, 12vw, 100px)" }}>
+                <div className="section-headings">
+                  <h1 style={{ color: "var(--text)" }}>{t("sections.projects")}</h1>
+                  <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
+                    {t("sections.myProjects")}
+                  </h5>
+                </div>
 
                 <div data-aos="fade-down">
                   <Project />
                 </div>
               </div>
 
-              <div style={{ paddingTop: "100px" }}>
-                <h1 style={{ color: "var(--text)" }}>{t("sections.contact")}</h1>
-                <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
-                  {t("sections.contactMe")}
-                </h5>
+              <div className="page-wrap" style={{ paddingTop: "clamp(48px, 12vw, 100px)" }}>
+                <div className="section-headings">
+                  <h1 style={{ color: "var(--text)" }}>{t("sections.contact")}</h1>
+                  <h5 style={{ color: "var(--accent)", paddingTop: "7px" }}>
+                    {t("sections.contactMe")}
+                  </h5>
+                </div>
 
                 <div data-aos="zoom-in">
                   <Conact sectionRef={contactRef} />

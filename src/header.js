@@ -20,11 +20,13 @@ export default function Header({ scrollToAbout,scrollToContact }) {
   return (
     <div>
       <div
+        className="header-bar"
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "30px",
+          paddingTop: "30px",
+          paddingBottom: "30px",
         }}
       >
         <div className="logo">
