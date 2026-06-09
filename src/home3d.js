@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Spline from "@splinetool/react-spline";
 import { useUi } from "./ui/UiProvider";
 
@@ -188,6 +189,7 @@ const heroStyles = `
     background: var(--border);
   }
 
+  /* ─── Spline container ─── */
   .hero-right {
     position: relative;
     width: 46%;
@@ -196,9 +198,65 @@ const heroStyles = `
     z-index: 1;
   }
 
-  .hero-right > * {
-    width: 100% !important;
-    height: 100% !important;
+  .hero-right > .spline-wrapper {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+  }
+
+  .hero-right > .spline-wrapper.loading {
+    opacity: 0;
+  }
+
+  /* Skeleton placeholder shown while Spline loads */
+  .hero-spline-skeleton {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .hero-spline-skeleton.hidden {
+    opacity: 0;
+  }
+
+  .hero-spline-skeleton-inner {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-border);
+    animation: skeleton-spin 3s linear infinite;
+    opacity: 0.3;
+  }
+
+  @keyframes skeleton-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* No-WebGL fallback */
+  .hero-spline-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-spline-fallback.visible {
+    display: flex;
+  }
+
+  .hero-spline-fallback-circle {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-border);
+    background: radial-gradient(circle at 35% 35%, var(--glow) 0%, transparent 60%);
+    opacity: 0.5;
   }
 
   @media (max-width: 900px) {
@@ -214,7 +272,29 @@ const heroStyles = `
     .hero-desc  { max-width: 100%; margin-inline: auto; }
     .hero-btns  { justify-content: center; }
     .hero-stats { justify-content: center; }
-    .hero-right { width: 100%; height: 320px; }
+
+    .hero-right {
+      width: 100%;
+      height: 320px;        /* explicit height on mobile */
+      flex-shrink: 0;
+    }
+
+    .hero-right > .spline-wrapper,
+    .hero-right > .spline-wrapper canvas {
+      width: 100% !important;
+      height: 320px !important;
+      display: block;
+    }
+
+    .hero-spline-skeleton-inner {
+      width: 180px;
+      height: 180px;
+    }
+
+    .hero-spline-fallback-circle {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   @media (max-width: 480px) {
@@ -225,8 +305,41 @@ const heroStyles = `
   }
 `;
 
+// Detect WebGL support once
+function hasWebGL() {
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      canvas.getContext("webgl") ||
+      canvas.getContext("experimental-webgl")
+    );
+  } catch {
+    return false;
+  }
+}
+
 export default function Hero({ sectionRef }) {
   const { t, lang } = useUi();
+
+  const [splineLoaded, setSplineLoaded] = useState(false);
+  const [splineError, setSplineError]   = useState(false);
+  const [webglOk]                       = useState(() => hasWebGL());
+
+  // Safety timeout — if Spline hasn't fired onLoad in 12 s, treat as error
+  useEffect(() => {
+    if (!webglOk) return;
+    const timer = setTimeout(() => {
+      if (!splineLoaded) setSplineError(true);
+    }, 12000);
+    return () => clearTimeout(timer);
+  }, [webglOk, splineLoaded]);
+
+  const handleLoad = () => setSplineLoaded(true);
+  const handleError = () => setSplineError(true);
+
+  const showSkeleton  = webglOk && !splineLoaded && !splineError;
+  const showFallback  = !webglOk || splineError;
+  const showSpline    = webglOk && !splineError;
 
   return (
     <>
@@ -235,7 +348,7 @@ export default function Hero({ sectionRef }) {
         <div className="hero-glow" aria-hidden="true" />
 
         <div className="hero-left">
-          <span className="hero-tag">{t("actions.light") ? "Available for work" : "Available for work"}</span>
+          <span className="hero-tag">Available for work</span>
 
           <h1 className="hero-name">
             Mo<span>Salah</span>
@@ -275,8 +388,36 @@ export default function Hero({ sectionRef }) {
           </div>
         </div>
 
+        {/* ─── 3-D panel ─── */}
         <div className="hero-right">
-          <Spline scene="https://prod.spline.design/1SJJNl1By5Xd5cqL/scene.splinecode" />
+
+          {/* Spinning ring shown while Spline loads */}
+          {showSkeleton && (
+            <div className="hero-spline-skeleton" aria-hidden="true">
+              <div className="hero-spline-skeleton-inner" />
+            </div>
+          )}
+
+          {/* Spline scene */}
+          {showSpline && (
+            <div
+              className={`spline-wrapper${splineLoaded ? "" : " loading"}`}
+            >
+              <Spline
+                scene="https://prod.spline.design/1SJJNl1By5Xd5cqL/scene.splinecode"
+                onLoad={handleLoad}
+                onError={handleError}
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+          )}
+
+          {/* Fallback for no-WebGL or load error */}
+          {showFallback && (
+            <div className="hero-spline-fallback visible" aria-hidden="true">
+              <div className="hero-spline-fallback-circle" />
+            </div>
+          )}
         </div>
       </section>
     </>
